@@ -1,26 +1,32 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 @import "tailwindcss";
+@theme {
+  --color-background: #0b0b0f;
+  --color-foreground: #f3f4f6;
+  --color-muted: #a1a1aa;
+  --color-primary: #f97316;
+  --color-primary-hover: #ea580c;
+  --color-card: #13131a;
+  --color-border: #27272a;
+  --radius-card: 12px;
+  --container-max: 1120px;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: "Inter", "DM Sans", "Geist", system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-background);
+  font-family: var(--font-mono);
+  color: var(--color-foreground);
+  padding: 2rem 10rem 2rem 10rem;
 }
