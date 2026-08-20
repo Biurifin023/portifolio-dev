@@ -1,6 +1,7 @@
 import Header from "@/app/components/header";
 import Hero from "./components/hero";
 import About from "./components/about";
+import FeaturedProjects from "./components/featured-projects";
 
 export default function PageHome() {
   return(
@@ -8,6 +9,7 @@ export default function PageHome() {
       <Header />
       <Hero />
       <About />
+      <FeaturedProjects />
     </div>
   )
 }
