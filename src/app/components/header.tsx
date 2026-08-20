@@ -14,15 +14,11 @@ export default function Header() {
                 <BtnDefaultSm> Home</BtnDefaultSm></Link>
                 <Link href="/page-about">
                 <BtnDefaultSm> Sobre</BtnDefaultSm></Link>
-                <Link href="/projects">
+                <Link href="/page-projects">
                 <BtnDefaultSm> Projetos</BtnDefaultSm></Link>
-                <Link href="/blog">
-                <BtnDefaultSm> Blog</BtnDefaultSm></Link>
-                <Link href="/contact">
-                <BtnDefaultSm> Contato</BtnDefaultSm></Link>
-                
+                <Link href="/page-contact">
+                <BtnDefaultSm> Contato</BtnDefaultSm></Link>               
             </div>
-
         </div>
         <div className="border-b border-border w-full "></div>
         </>
