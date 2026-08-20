@@ -1,4 +1,5 @@
 import BtnDefaultSm from "../utils/Buttons/Btn-default-sm";
+import Link from "next/link";
 
 export default function Header() {
     return(
@@ -9,11 +10,16 @@ export default function Header() {
             </div>
 
             <div className="flex space-x-2">
-                <BtnDefaultSm>Home</BtnDefaultSm>
-                <BtnDefaultSm>Sobre</BtnDefaultSm>
-                <BtnDefaultSm>Projetos</BtnDefaultSm>
-                <BtnDefaultSm>Blog</BtnDefaultSm>
-                <BtnDefaultSm>Contato</BtnDefaultSm>
+                <Link href="/">
+                <BtnDefaultSm> Home</BtnDefaultSm></Link>
+                <Link href="/page-about">
+                <BtnDefaultSm> Sobre</BtnDefaultSm></Link>
+                <Link href="/projects">
+                <BtnDefaultSm> Projetos</BtnDefaultSm></Link>
+                <Link href="/blog">
+                <BtnDefaultSm> Blog</BtnDefaultSm></Link>
+                <Link href="/contact">
+                <BtnDefaultSm> Contato</BtnDefaultSm></Link>
                 
             </div>
 
