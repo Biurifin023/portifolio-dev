@@ -3,7 +3,7 @@ import BtnDefaultSm from "../utils/Buttons/Btn-default-sm";
 export default function Header() {
     return(
         <>
-        <div className="flex p-4 justify-between">
+        <div className="flex py-4 justify-between">
             <div className="font-bold uppercase text-lg">
                 VitorLuiz <small className="text-primary">.dev</small>
             </div>
