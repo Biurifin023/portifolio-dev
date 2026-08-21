@@ -1,5 +1,4 @@
 import { Suspense } from "react"
-import BtnDefaultSm from "../utils/Buttons/Btn-default-sm"
 import { ProjectsList } from "./projects-dynamic"
 import { ProjectsGridSkeleton } from "./projects-skeletons"
 
@@ -12,13 +11,6 @@ export default function PageProjects() {
             </div>
 
             <div className="py-6">
-                <div className="mb-6 flex gap-2">
-                    <BtnDefaultSm>Todos</BtnDefaultSm>
-                    <BtnDefaultSm>Frontend</BtnDefaultSm>
-                    <BtnDefaultSm>Backend</BtnDefaultSm>
-                    <BtnDefaultSm>FullStack</BtnDefaultSm>
-                </div>
-
                 <Suspense fallback={<ProjectsGridSkeleton />}>
                     <ProjectsList />
                 </Suspense>
