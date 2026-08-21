@@ -3,6 +3,8 @@ import About from "./components/about";
 import FeaturedProjects from "./components/featured-projects";
 
 export default function PageHome() {
+  const isLoading = true 
+
   return(
     <div className="flex flex-col flex-1 gap-4">
       <Hero />
