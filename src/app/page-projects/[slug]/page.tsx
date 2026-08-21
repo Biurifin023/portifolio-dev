@@ -17,7 +17,9 @@ export default function ProjectContent() {
 
                 <h1 className="text-display text-4xl">DeBarros Tattoo site</h1>
                 <p className="text-muted">Site institucional para estúdio de tatuagem</p>
-                <Link href="https://github.com/Biurifin023"><BtnAccent>Ver no GitHub</BtnAccent></Link>
+                <Link 
+                target="blank"
+                href="https://github.com/Biurifin023"><BtnAccent>Ver no GitHub</BtnAccent></Link>
             </div>
 
             <div className="w-1/2">

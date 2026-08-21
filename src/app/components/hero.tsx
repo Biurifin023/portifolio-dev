@@ -1,5 +1,6 @@
 import BtnAccent from "../utils/Buttons/Btn-accent"
 import BtnDefault from "../utils/Buttons/Btn-default"
+import Link from "next/link"
 
 export default function Hero() {
     return (
@@ -10,8 +11,12 @@ export default function Hero() {
             <p className="text-md text-muted">Estudante de Desenvolvimento de Sistemas, <br /> focado em criar software organizado, escalável e fácil de manter.</p>
 
             <div className="flex gap-4 py-4">
-                <BtnAccent>Projetos</BtnAccent>
-                <BtnDefault>Entrar em Contato</BtnDefault>
+                <Link href="/page-projects">
+                    <BtnAccent>Projetos</BtnAccent>
+                </Link>
+                <Link href="/page-contact">
+                    <BtnDefault>Entrar em Contato</BtnDefault>
+                </Link>
             </div>
         </div>
     )

@@ -15,7 +15,7 @@ export default function Footer() {
                 <Link
                 target="_blank"
                 className="text-muted hover:text-primary"
-                href="https://www.linkedin.com/in/vitor-luiz-de-barros-da-silva-965500296">LinkedIn</Link>
+                href="https://www.linkedin.com/in/vitor-luiz-7b410b3b7">LinkedIn</Link>
                 <Link
                 target="_blank"
                 className="text-muted hover:text-primary"
