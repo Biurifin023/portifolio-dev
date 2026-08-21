@@ -16,7 +16,7 @@ export default function PageAbout() {
                             <small className="text-muted  ">Jul/2026</small>
                         </div>
                         <div className="border-l-2 border-primary">
-                            <h3 className="ml-4">ADS - Análise e Desenvolvimento de Sistemas</h3>
+                            <h3 className="ml-4 font-bold">ADS - Análise e Desenvolvimento de Sistemas</h3>
                             <small className="ml-4 text-muted">UNINTER</small>
                         </div>
                     </div>
@@ -26,7 +26,7 @@ export default function PageAbout() {
                             <small className="text-muted  ">Jan/2026</small>
                         </div>
                         <div className="border-l-2 border-primary">
-                            <h3 className="ml-4">Formação FullStack</h3>
+                            <h3 className="ml-4 font-bold">Formação FullStack</h3>
                             <small className="ml-4 text-muted">RocketSeat</small>
                         </div>
                     </div>
