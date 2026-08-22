@@ -1,0 +1,66 @@
+{
+  "id": "port",
+  "label": "Port",
+  "format": "page",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "card": {
+        "type": "Group",
+        "config": {
+          "label": "Card",
+          "repeat": true,
+          "fields": {
+            "title": { "type": "Text", "config": { "label": "Title" } },
+            "description": { "type": "Text", "config": { "label": "Description" } },
+            "type": {
+              "type": "Select",
+              "config": {
+                "label": "Type",
+                "options": ["Frontend", "Backend", "FullStack"]
+              }
+            },
+            "stack_card": { "type": "Text", "config": { "label": "Stack Card" } },
+            "stack_card2": { "type": "Text", "config": { "label": "Stack Card 2" } },
+            "stack_card3": { "type": "Text", "config": { "label": "Stack Card 3" } },
+            "stack_card4": { "type": "Text", "config": { "label": "Stack Card 4" } },
+            "stack_card5": { "type": "Text", "config": { "label": "Stack Card 5" } },
+            "stack_card6": { "type": "Text", "config": { "label": "Stack Card 6" } },
+            "stack_card7": { "type": "Text", "config": { "label": "Stack Card 7" } },
+            "stack_card8": { "type": "Text", "config": { "label": "Stack Card 8" } },
+            "stack_card9": { "type": "Text", "config": { "label": "Stack Card 9" } },
+            "stack_card10": { "type": "Text", "config": { "label": "Stack Card 10" } }
+          }
+        }
+      },
+      "about": {
+        "type": "Group",
+        "config": {
+          "label": "About",
+          "fields": {
+            "description": { "type": "Text", "config": { "label": "Description" } },
+            "stacks": { "type": "Text", "config": { "label": "Stacks" } }
+          }
+        }
+      },
+      "slug_project": {
+        "type": "Group",
+        "config": {
+          "label": "Slug Project",
+          "repeat": true,
+          "fields": {
+            "title": { "type": "Text", "config": { "label": "Title" } },
+            "description": { "type": "Text", "config": { "label": "Description" } },
+            "description_about": { "type": "Text", "config": { "label": "Description About" } },
+            "funtionalities1": { "type": "Text", "config": { "label": "Functionalities 1" } },
+            "funtionalities2": { "type": "Text", "config": { "label": "Functionalities 2" } },
+            "funtionalities3": { "type": "Text", "config": { "label": "Functionalities 3" } },
+            "funtionalities4": { "type": "Text", "config": { "label": "Functionalities 4" } },
+            "print_page": { "type": "Image", "config": { "label": "Print Page" } }
+          }
+        }
+      }
+    }
+  }
+}

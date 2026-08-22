@@ -1,6 +1,7 @@
 import { Suspense } from "react"
 import Link from "next/link"
 import BtnAccent from "@/app/utils/Buttons/Btn-accent"
+import { getProjectBySlug, getProjectSlugs } from "@/lib/prismic-queries"
 import {
     ProjectAbout,
     ProjectBreadcrumbTitle,
@@ -16,7 +17,20 @@ import {
     ProjectImageSkeleton,
 } from "./project-skeletons"
 
-export default function ProjectContent() {
+type ProjectPageProps = {
+    params: Promise<{ slug: string }>
+}
+
+export async function generateStaticParams() {
+    const slugs = await getProjectSlugs()
+    return slugs.map(slug => ({ slug }))
+}
+
+export default async function ProjectContent({ params }: ProjectPageProps) {
+    const { slug } = await params
+    const project = await getProjectBySlug(slug)
+    const githubUrl = project?.githubUrl ?? "https://github.com/Biurifin023"
+
     return (
         <>
             <div className="flex border-b border-border py-4">
@@ -30,25 +44,22 @@ export default function ProjectContent() {
                         </Link>
                         <p>/</p>
                         <Suspense fallback={<ProjectBreadcrumbSkeleton />}>
-                            <ProjectBreadcrumbTitle />
+                            <ProjectBreadcrumbTitle slug={slug} />
                         </Suspense>
                     </div>
 
                     <Suspense fallback={<ProjectHeaderSkeleton />}>
-                        <ProjectHeader />
+                        <ProjectHeader slug={slug} />
                     </Suspense>
 
-                    <Link
-                        target="blank"
-                        href="https://github.com/Biurifin023"
-                    >
+                    <Link target="blank" href={githubUrl}>
                         <BtnAccent>Ver no GitHub</BtnAccent>
                     </Link>
                 </div>
 
                 <div className="w-1/2">
                     <Suspense fallback={<ProjectImageSkeleton />}>
-                        <ProjectImage />
+                        <ProjectImage slug={slug} />
                     </Suspense>
                 </div>
             </div>
@@ -56,14 +67,14 @@ export default function ProjectContent() {
             <div className="flex flex-col gap-3 py-4">
                 <h2 className="font-display text-lg">Sobre o projeto</h2>
                 <Suspense fallback={<ProjectAboutSkeleton />}>
-                    <ProjectAbout />
+                    <ProjectAbout slug={slug} />
                 </Suspense>
             </div>
 
             <div className="flex flex-col gap-3">
                 <h2 className="font-display text-lg">Funcionalidades</h2>
                 <Suspense fallback={<ProjectFeaturesSkeleton />}>
-                    <ProjectFeatures />
+                    <ProjectFeatures slug={slug} />
                 </Suspense>
             </div>
         </>

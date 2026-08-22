@@ -1,37 +1,7 @@
 import Link from "next/link"
 import BoxInfoAccent from "../utils/box-info-accent"
 import BoxInfoBlue from "../utils/box-info-blue"
-
-// Troque este fetch pelo client do CMS (ex.: Prismic) quando integrar.
-async function getFeaturedProjects() {
-    await new Promise(resolve => setTimeout(resolve, 3000))
-    return [
-        {
-            title: "DeBarros Tattoo site",
-            href: "/page-projects/debarros-tattoo",
-            type: "Frontend",
-            description:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. In nisi explicabo consectetur quas veniam placeat vitae delectus magni voluptates minima suscipit similique atque, voluptatibus dolor animi porro neque unde cupiditate!",
-            stack: ["Next.js", "Prismic", "CMS"],
-        },
-        {
-            title: "DeBarros Tattoo site",
-            href: "/page-projects/debarros-tattoo",
-            type: "Frontend",
-            description:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. In nisi explicabo consectetur quas veniam placeat vitae delectus magni voluptates minima suscipit similique atque, voluptatibus dolor animi porro neque unde cupiditate!",
-            stack: ["Next.js", "Prismic", "CMS"],
-        },
-        {
-            title: "DeBarros Tattoo site",
-            href: "/page-projects/debarros-tattoo",
-            type: "Frontend",
-            description:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. In nisi explicabo consectetur quas veniam placeat vitae delectus magni voluptates minima suscipit similique atque, voluptatibus dolor animi porro neque unde cupiditate!",
-            stack: ["Next.js", "Prismic", "CMS"],
-        },
-    ]
-}
+import { getFeaturedProjects } from "@/lib/prismic-queries"
 
 export async function FeaturedProjectsList() {
     const projects = await getFeaturedProjects()
@@ -53,7 +23,7 @@ export async function FeaturedProjectsList() {
                         <p className="text-muted">{project.description}</p>
 
                         <div className="flex gap-2">
-                            {project.stack.map((tech) => (
+                            {project.stack.map(tech => (
                                 <BoxInfoBlue key={tech}>{tech}</BoxInfoBlue>
                             ))}
                         </div>
