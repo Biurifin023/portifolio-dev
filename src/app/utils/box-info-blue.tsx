@@ -2,9 +2,9 @@ type BoxInfoBlueProps = {
     children: React.ReactNode
 }
 
-export default function BoxInfoBlue({children}: BoxInfoBlueProps) {
+export default function BoxInfoBlue({ children }: BoxInfoBlueProps) {
     return (
-        <div className="bg-steel border border-steel-dim w-fit rounded-lg px-2 py-1 text-xs text-foreground font-bold">
+        <div className="max-w-full truncate rounded-md border border-steel-dim bg-steel px-2 py-0.5 text-[11px] font-semibold leading-5 text-foreground">
             {children}
         </div>
     )

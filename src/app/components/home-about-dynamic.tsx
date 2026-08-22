@@ -11,7 +11,7 @@ export async function HomeAboutStack() {
     const { stack } = await getAboutContent()
 
     return (
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-1.5">
             {stack.map((tech, index) => (
                 <BoxInfoBlue key={`${tech}-${index}`}>{tech}</BoxInfoBlue>
             ))}
