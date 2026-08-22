@@ -90,7 +90,10 @@ export function mapProjectDetailFromPort(
             slugProject && isFilled.image(slugProject.print_page)
                 ? (slugProject.print_page.alt ?? title)
                 : title,
-        githubUrl: "https://github.com/Biurifin023",
+        githubUrl:
+            slugProject && isFilled.link(slugProject.github_url)
+                ? slugProject.github_url.url
+                : "https://github.com/Biurifin023",
         type: mapProjectType(card?.type ?? null),
         description: card?.description ?? slugProject?.description ?? "",
         stack: card ? mapCardStack(card) : [],
@@ -100,19 +103,29 @@ export function mapProjectDetailFromPort(
 
 export type ProjectDetail = ReturnType<typeof mapProjectDetailFromPort>
 
+export function mapAboutStacks(aboutItem: PortAboutItem | undefined): string[] {
+    if (!aboutItem) return []
+
+    return [
+        aboutItem.stack_1,
+        aboutItem.stack_2,
+        aboutItem.stack_3,
+        aboutItem.stack_4,
+        aboutItem.stack_5,
+        aboutItem.stack_6,
+        aboutItem.stack_7,
+        aboutItem.stack_8,
+        aboutItem.stack_9,
+        aboutItem.stack_10,
+    ].filter((tech): tech is string => Boolean(tech?.trim()))
+}
+
 export function mapAboutFromPort(data: PortDocumentData) {
     const aboutItem: PortAboutItem | undefined = data.about?.[0]
-    const stacksFromAbout = aboutItem?.stacks?.trim()
-        ? [aboutItem.stacks.trim()]
-        : []
-
-    const stacksFromCards = Array.from(
-        new Set(data.card.flatMap(card => mapCardStack(card)))
-    )
 
     return {
         description: aboutItem?.description ?? "",
-        stack: stacksFromCards.length > 0 ? stacksFromCards : stacksFromAbout,
+        stack: mapAboutStacks(aboutItem),
         trajectory: [] as Array<{
             date: string
             title: string

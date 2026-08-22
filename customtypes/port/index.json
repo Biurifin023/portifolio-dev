@@ -40,7 +40,16 @@
           "label": "About",
           "fields": {
             "description": { "type": "Text", "config": { "label": "Description" } },
-            "stacks": { "type": "Text", "config": { "label": "Stacks" } }
+            "stack_1": { "type": "Text", "config": { "label": "Stack 1" } },
+            "stack_2": { "type": "Text", "config": { "label": "Stack 2" } },
+            "stack_3": { "type": "Text", "config": { "label": "Stack 3" } },
+            "stack_4": { "type": "Text", "config": { "label": "Stack 4" } },
+            "stack_5": { "type": "Text", "config": { "label": "Stack 5" } },
+            "stack_6": { "type": "Text", "config": { "label": "Stack 6" } },
+            "stack_7": { "type": "Text", "config": { "label": "Stack 7" } },
+            "stack_8": { "type": "Text", "config": { "label": "Stack 8" } },
+            "stack_9": { "type": "Text", "config": { "label": "Stack 9" } },
+            "stack_10": { "type": "Text", "config": { "label": "Stack 10" } }
           }
         }
       },
@@ -57,7 +66,14 @@
             "funtionalities2": { "type": "Text", "config": { "label": "Functionalities 2" } },
             "funtionalities3": { "type": "Text", "config": { "label": "Functionalities 3" } },
             "funtionalities4": { "type": "Text", "config": { "label": "Functionalities 4" } },
-            "print_page": { "type": "Image", "config": { "label": "Print Page" } }
+            "print_page": { "type": "Image", "config": { "label": "Print Page" } },
+            "github_url": {
+              "type": "Link",
+              "config": {
+                "label": "GitHub URL",
+                "allowTargetBlank": true
+              }
+            }
           }
         }
       }

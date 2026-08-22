@@ -52,7 +52,11 @@ export default async function ProjectContent({ params }: ProjectPageProps) {
                         <ProjectHeader slug={slug} />
                     </Suspense>
 
-                    <Link target="blank" href={githubUrl}>
+                    <Link
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        href={githubUrl}
+                    >
                         <BtnAccent>Ver no GitHub</BtnAccent>
                     </Link>
                 </div>

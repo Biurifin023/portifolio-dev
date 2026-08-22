@@ -1,4 +1,4 @@
-import type { ImageField, KeyTextField } from "@prismicio/client"
+import type { ImageField, KeyTextField, LinkField } from "@prismicio/client"
 
 export type PortCard = {
     title: KeyTextField
@@ -18,7 +18,16 @@ export type PortCard = {
 
 export type PortAboutItem = {
     description: KeyTextField
-    stacks: KeyTextField
+    stack_1?: KeyTextField
+    stack_2?: KeyTextField
+    stack_3?: KeyTextField
+    stack_4?: KeyTextField
+    stack_5?: KeyTextField
+    stack_6?: KeyTextField
+    stack_7?: KeyTextField
+    stack_8?: KeyTextField
+    stack_9?: KeyTextField
+    stack_10?: KeyTextField
 }
 
 export type PortSlugProject = {
@@ -30,6 +39,7 @@ export type PortSlugProject = {
     funtionalities3: KeyTextField
     funtionalities4: KeyTextField
     print_page: ImageField
+    github_url: LinkField
 }
 
 export type PortDocumentData = {
