@@ -27,7 +27,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     </p>
                     <div
                         aria-hidden
-                        className="pointer-events-none absolute inset-x-0 bottom-0 h-8 bg-gradient-to-t from-card via-card/70 to-transparent transition-opacity duration-300"
+                        className="pointer-events-none absolute inset-x-0 bottom-0 h-8 bg-linear-to-t from-card via-card/70 to-transparent transition-opacity duration-300"
                     />
                 </div>
 

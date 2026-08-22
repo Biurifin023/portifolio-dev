@@ -12,7 +12,7 @@ import {
     fallbackAbout,
     fallbackProjectDetails,
     fallbackProjects,
-} from "@/lib/prismic-fallbacks"
+} from "@/lib/prismic-fallbacks" 
 import type { Project } from "@/app/page-projects/projects-grid"
 import type { PortDocumentData } from "@/types/prismic"
 
@@ -33,10 +33,20 @@ export const getAllProjects = cache(async (): Promise<Project[]> => {
     }
 })
 
+const FEATURED_SLUGS = [
+    "debarros-tattoo-site",
+    "refund",
+    "gallery-plus",
+] as const
+
 export const getFeaturedProjects = cache(async (): Promise<Project[]> => {
     try {
         const projects = await getAllProjects()
-        return projects.slice(0, 3)
+        const featured = FEATURED_SLUGS.map(slug =>
+            projects.find(project => project.href.endsWith(`/${slug}`))
+        ).filter((project): project is Project => Boolean(project))
+
+        return featured.length > 0 ? featured : projects.slice(0, 3)
     } catch (error) {
         console.warn("[Prismic] Falha ao buscar projetos em destaque:", error)
         return fallbackProjects.slice(0, 3)
