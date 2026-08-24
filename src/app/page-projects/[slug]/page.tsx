@@ -33,9 +33,9 @@ export default async function ProjectContent({ params }: ProjectPageProps) {
 
     return (
         <>
-            <div className="flex border-b border-border py-4">
-                <div className="flex flex-col gap-4 w-1/2 py-8">
-                    <div className="flex gap-2 items-center">
+            <div className="flex flex-col gap-6 border-b border-border py-4 lg:flex-row lg:gap-8">
+                <div className="flex w-full flex-col gap-4 py-4 lg:w-1/2 lg:py-8">
+                    <div className="flex flex-wrap items-center gap-2 text-sm sm:text-base">
                         <Link
                             className="hover:text-primary"
                             href="/page-projects"
@@ -61,7 +61,7 @@ export default async function ProjectContent({ params }: ProjectPageProps) {
                     </Link>
                 </div>
 
-                <div className="w-1/2">
+                <div className="w-full lg:w-1/2">
                     <Suspense fallback={<ProjectImageSkeleton />}>
                         <ProjectImage slug={slug} />
                     </Suspense>

@@ -7,14 +7,17 @@ import { FeaturedProjectsGridSkeleton } from "./featured-projects-skeletons"
 export default function FeaturedProjects() {
     return (
         <>
-            <div className="mt-4 flex items-center justify-between py-2">
-                <h2 className="text-2xl font-extrabold">Projetos em destaque</h2>
-                <div className="flex items-center gap-2">
-                    <Link href="/page-projects" className="font-bold text-primary">
-                        Ver todos
-                    </Link>
-                    <FaArrowRight className="cursor-pointer text-primary" />
-                </div>
+            <div className="mt-4 flex flex-col gap-3 py-2 sm:flex-row sm:items-center sm:justify-between">
+                <h2 className="text-xl font-extrabold sm:text-2xl">
+                    Projetos em destaque
+                </h2>
+                <Link
+                    href="/page-projects"
+                    className="flex items-center gap-2 font-bold text-primary"
+                >
+                    Ver todos
+                    <FaArrowRight />
+                </Link>
             </div>
 
             <Suspense fallback={<FeaturedProjectsGridSkeleton />}>

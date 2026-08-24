@@ -7,7 +7,7 @@ export default function PageProjects() {
         <>
             <div className="flex flex-col gap-4 py-4">
                 <h3 className="text-primary uppercase font-bold">Projetos</h3>
-                <h1 className="text-display text-4xl">Projetos selecionados</h1>
+                <h1 className="text-display text-3xl sm:text-4xl">Projetos selecionados</h1>
             </div>
 
             <div className="py-6">

@@ -38,11 +38,11 @@ export default function PageContact() {
 
     return (
         <>
-            <div className="flex gap-8">
+            <div className="flex flex-col gap-8 lg:flex-row lg:gap-8">
                 <div className="flex-1">
                     <div className="flex flex-col gap-4">
                         <h3 className="uppercase font-bold text-primary">Contato</h3>
-                        <h1 className="font-display text-4xl">Vamos Conversar</h1>
+                        <h1 className="font-display text-3xl sm:text-4xl">Vamos Conversar</h1>
                         <p className="text-muted">
                             Aberto a oportunidades de trabalho, contribuições ou apenas papos.
                         </p>
@@ -96,24 +96,28 @@ export default function PageContact() {
                         <Link
                             className="text-3xl transition-all duration-200 hover:text-primary"
                             href="https://wa.me/5524998535387"
+                            target="_blank"
                         >
                             <FaWhatsapp />
                         </Link>
                         <Link
                             className="text-3xl transition-all duration-200 hover:text-primary"
-                            href="https://wa.me/5524998535387"
+                            href="https://www.linkedin.com/in/vitor-luiz-7b410b3b7/"
+                            target="_blank"
                         >
                             <FaLinkedinIn />
                         </Link>
                         <Link
                             className="text-3xl transition-all duration-200 hover:text-primary"
-                            href="https://wa.me/5524998535387"
+                            href="mailto:vitor7813@gmail.com"
+                            target="_blank"
                         >
                             <FaEnvelope />
                         </Link>
                         <Link
                             className="text-3xl transition-all duration-200 hover:text-primary"
-                            href="https://wa.me/5524998535387"
+                            href="https://github.com/Biurifin023"
+                            target="_blank"
                         >
                             <FaGithub />
                         </Link>

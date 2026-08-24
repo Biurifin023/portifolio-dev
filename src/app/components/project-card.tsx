@@ -31,9 +31,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     />
                 </div>
 
-                <div className="mt-auto flex max-h-16 flex-wrap gap-1.5 overflow-hidden">
-                    {project.stack.map(tech => (
-                        <BoxInfoBlue key={tech}>{tech}</BoxInfoBlue>
+                <div className="mt-auto flex flex-wrap gap-1.5">
+                    {project.stack.map((tech, index) => (
+                        <BoxInfoBlue key={`${tech}-${index}`}>{tech}</BoxInfoBlue>
                     ))}
                 </div>
             </article>

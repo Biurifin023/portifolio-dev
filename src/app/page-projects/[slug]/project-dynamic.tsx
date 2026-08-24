@@ -23,7 +23,7 @@ export async function ProjectHeader({ slug }: ProjectSlugProps) {
 
     return (
         <>
-            <h1 className="text-display text-4xl">{title}</h1>
+            <h1 className="text-display text-3xl sm:text-4xl">{title}</h1>
             <p className="text-muted">{summary}</p>
         </>
     )

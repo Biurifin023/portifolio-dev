@@ -14,14 +14,14 @@ export async function TrajectoryList() {
             {trajectory.map(item => (
                 <div
                     key={`${item.date}-${item.title}`}
-                    className="flex gap-4 border-b border-border p-4"
+                    className="flex flex-col gap-2 border-b border-border p-4 sm:flex-row sm:gap-4"
                 >
-                    <div>
+                    <div className="sm:w-20 sm:shrink-0">
                         <small className="text-muted">{item.date}</small>
                     </div>
-                    <div className="border-l-2 border-primary">
-                        <h3 className="ml-4 font-bold">{item.title}</h3>
-                        <small className="ml-4 text-muted">{item.institution}</small>
+                    <div className="border-l-2 border-primary pl-4 sm:border-l-2">
+                        <h3 className="font-bold">{item.title}</h3>
+                        <small className="text-muted">{item.institution}</small>
                     </div>
                 </div>
             ))}

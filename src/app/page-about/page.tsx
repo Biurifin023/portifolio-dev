@@ -5,16 +5,16 @@ import { DescriptionSkeleton, TrajectoryListSkeleton } from "./about-skeletons"
 export default function PageAbout() {
     return (
         <>
-            <div className="flex flex-col gap-4 border-b border-border p-4 pb-10">
+            <div className="flex flex-col gap-4 border-b border-border p-2 pb-10 sm:p-4">
                 <h2 className="uppercase font-bold text-primary">Sobre</h2>
-                <h1 className="text-4xl font-display">Vitor Luiz</h1>
+                <h1 className="text-3xl font-display sm:text-4xl">Vitor Luiz</h1>
 
                 <Suspense fallback={<DescriptionSkeleton />}>
                     <AboutDescription />
                 </Suspense>
             </div>
 
-            <div className="grid grid-cols-1 gap-8 p-4 md:grid-cols-2">
+            <div className="grid grid-cols-1 gap-8 p-2 sm:p-4 md:grid-cols-2">
                 <div className="flex flex-col gap-4">
                     <h1 className="text-2xl font-display">Trajetória</h1>
 
