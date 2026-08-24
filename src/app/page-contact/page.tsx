@@ -20,7 +20,19 @@ export default function PageContact() {
     })
 
     function onSubmit(data: FormSchema) {
-        console.log(data)
+        const phone = "5524998535387"
+        const text = [
+            `*Contato pelo portfólio*`,
+            ``,
+            `*Nome:* ${data.name}`,
+            `*Email:* ${data.email}`,
+            ``,
+            `*Mensagem:*`,
+            data.message,
+        ].join("\n")
+
+        const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`
+        window.open(url, "_blank", "noopener,noreferrer")
         reset()
     }
 
