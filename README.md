@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Vitor Luiz.dev — Portfólio
 
-## Getting Started
+Portfólio pessoal de **Vitor Luiz**, desenvolvedor Full Stack focado em Front-end. O site apresenta projetos, stack, trajetória e um formulário de contato integrado ao WhatsApp.
 
-First, run the development server:
+---
+
+## Sobre o projeto
+
+Aplicação construída com **Next.js (App Router)** e conteúdo gerenciado via **Prismic CMS**. Os textos, cards de projetos, detalhes por slug e stack vêm do CMS, com fallbacks locais caso a API falhe.
+
+O design segue tema escuro próprio, tipografia de display e layout responsivo para mobile, tablet e desktop.
+
+---
+
+## Funcionalidades
+
+- **Home** — hero, seção sobre mim, stack atual e projetos em destaque
+- **Sobre** — descrição dinâmica, trajetória e objetivos
+- **Projetos** — grid com filtro por tipo (Todos / Frontend / Backend / FullStack)
+- **Detalhe do projeto** — breadcrumb, resumo, imagem, sobre, funcionalidades e link para o GitHub
+- **Contato** — formulário validado (Zod + React Hook Form) que abre o WhatsApp com a mensagem preenchida
+- **CMS (Prismic)** — conteúdo editável sem redeploy (documento `port` com groups `card`, `about` e `slug_project`)
+- **Skeletons + Suspense** — loading states nas seções dinâmicas
+- **SEO** — metadata global e por página, Open Graph, Twitter cards e `generateMetadata` nos slugs
+- **Layout responsivo** — adaptação para telas pequenas, médias e grandes
+- **404** — página customizada de não encontrado
+
+---
+
+## Tecnologias
+
+| Camada | Tecnologias |
+|--------|-------------|
+| Framework | Next.js 16, React 19, TypeScript |
+| Estilo | Tailwind CSS 4 |
+| CMS | Prismic (`@prismicio/client`, `@prismicio/next`, `@prismicio/react`) |
+| Formulários | React Hook Form, Zod, `@hookform/resolvers` |
+| Ícones | React Icons |
+| Tooling | ESLint, React Compiler |
+
+---
+
+## Como rodar
+
+### Pré-requisitos
+
+- Node.js 20+
+- Conta/repositório Prismic (opcional para desenvolvimento — há fallbacks)
+
+### Instalação
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Variáveis de ambiente
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Crie `.env.local` na raiz:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```env
+NEXT_PUBLIC_PRISMIC_ENVIRONMENT=seu-repositorio-prismic
+```
 
-## Learn More
+### Scripts
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run dev      # desenvolvimento (http://localhost:3000)
+npm run build    # build de produção
+npm run start    # sobe o build
+npm run lint     # ESLint
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
+## Licença
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Projeto pessoal — uso e referência sob autorização do autor.

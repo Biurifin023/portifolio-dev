@@ -36,7 +36,7 @@ export async function generateMetadata({
       openGraph: {
         title: project.title,
         description: project.summary,
-        images: project.imageUrl ? [{ url: project.imageUrl }] : undefined,
+        images: project.imageUrl ? [{ url: project.imageUrl || "/OG-img.png" }] : undefined,
       },
     }
   }

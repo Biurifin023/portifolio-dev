@@ -16,16 +16,18 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://vitorluiz.dev/"),
-  title: "Vitor Luiz | Desenvolvedor Full Stack",
+  title:{ 
+    default:"Vitor Luiz | Desenvolvedor Full Stack",
+    template: "%s | Vitor Luiz"},
   description: "Portfólio de Vitor Luiz - desenvolvedor Full Stack",
 
   openGraph: {
     title: "Vitor Luiz | Desenvolvedor Full Stack",
-    description: "Portifolio com projetos, stack e contato",
+    description: "Portifólio com projetos, stack e contato",
     url: "/",
     siteName: "Vitor Luiz.dev",
-    locale: "pt-BR",
-    images: {url: "@/public/OG-img.png"}
+    locale: "pt_BR",
+    images: [{url: "/public/OG-img.png", width: 1200, height: 630}]
   },
   twitter: {
     card: "summary_large_image",
