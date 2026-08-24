@@ -18,12 +18,12 @@ export const fallbackAbout = {
     stack: ["Next.js", "React", "TypeScript", "Prismic", "Tailwind"],
     trajectory: [
         {
-            date: "Jul/2026",
+            date: "2026 - 2028",
             title: "ADS - Análise e Desenvolvimento de Sistemas",
             institution: "UNINTER",
         },
         {
-            date: "Jan/2026",
+            date: "2026 - 2027",
             title: "Formação FullStack",
             institution: "RocketSeat",
         },

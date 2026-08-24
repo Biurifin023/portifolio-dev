@@ -27,23 +27,31 @@ export default function PageAbout() {
                     <h1 className="text-2xl font-display">Objetivos</h1>
 
                     <div className="rounded-md border border-border border-l-4 border-l-steel bg-card p-4">
-                        <h3 className="text-md font-bold">Aprender fazendo</h3>
-                        <p className="text-muted">Teoria entra melhor quando vira projeto no GitHub.</p>
+                        <h3 className="text-md font-bold">Evoluir no Front-end</h3>
+                        <p className="text-muted">
+                            Dominar Next.js, React e TypeScript com interfaces claras, acessíveis e performáticas.
+                        </p>
                     </div>
 
                     <div className="rounded-md border border-border border-l-4 border-l-steel bg-card p-4">
-                        <h3 className="text-md font-bold">Aprender fazendo</h3>
-                        <p className="text-muted">Teoria entra melhor quando vira projeto no GitHub.</p>
+                        <h3 className="text-md font-bold">Base Full-Stack</h3>
+                        <p className="text-muted">
+                            Entender bem a ponte entre front e back para entregar features de ponta a ponta.
+                        </p>
                     </div>
 
                     <div className="rounded-md border border-border border-l-4 border-l-steel bg-card p-4">
-                        <h3 className="text-md font-bold">Aprender fazendo</h3>
-                        <p className="text-muted">Teoria entra melhor quando vira projeto no GitHub.</p>
+                        <h3 className="text-md font-bold">Aprendizado contínuo</h3>
+                        <p className="text-muted">
+                            Estudar todo dia, com ADS + projetos práticos, sem parar de evoluir.
+                        </p>
                     </div>
 
                     <div className="rounded-md border border-border border-l-4 border-l-steel bg-card p-4">
-                        <h3 className="text-md font-bold">Aprender fazendo</h3>
-                        <p className="text-muted">Teoria entra melhor quando vira projeto no GitHub.</p>
+                        <h3 className="text-md font-bold">Colaboração</h3>
+                        <p className="text-muted">
+                            Comunicar bem, cumprir prazos e trabalhar em equipe com responsabilidade.
+                        </p>
                     </div>
                 </div>
             </div>
