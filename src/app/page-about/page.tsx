@@ -1,6 +1,12 @@
 import { Suspense } from "react"
 import { AboutDescription, TrajectoryList } from "./about-dynamic"
 import { DescriptionSkeleton, TrajectoryListSkeleton } from "./about-skeletons"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "Sobre",
+    description: "Trajetória, objetivos e formação."
+}
 
 export default function PageAbout() {
     return (

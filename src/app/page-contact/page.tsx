@@ -1,129 +1,66 @@
-"use client"
-
-import Input from "../utils/input"
-import BtnAccent from "../utils/Buttons/Btn-accent"
-import Textarea from "../utils/text-area"
+import type { Metadata } from "next"
 import Link from "next/link"
 import { FaGithub, FaWhatsapp, FaLinkedinIn, FaEnvelope } from "react-icons/fa"
-import { formSchema, FormSchema } from "../schemas/form"
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
+import ContactForm from "./contact-form"
+
+export const metadata: Metadata = {
+    title: "Contato",
+    description: "Entrar em contato com o desenvolvedor Full Stack Vitor Luiz",
+}
 
 export default function PageContact() {
-    const {
-        register,
-        handleSubmit,
-        reset,
-        formState: { errors },
-    } = useForm<FormSchema>({
-        resolver: zodResolver(formSchema),
-    })
-
-    function onSubmit(data: FormSchema) {
-        const phone = "5524998535387"
-        const text = [
-            `*Contato pelo portfólio*`,
-            ``,
-            `*Nome:* ${data.name}`,
-            `*Email:* ${data.email}`,
-            ``,
-            `*Mensagem:*`,
-            data.message,
-        ].join("\n")
-
-        const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`
-        window.open(url, "_blank", "noopener,noreferrer")
-        reset()
-    }
-
     return (
-        <>
-            <div className="flex flex-col gap-8 lg:flex-row lg:gap-8">
-                <div className="flex-1">
-                    <div className="flex flex-col gap-4">
-                        <h3 className="uppercase font-bold text-primary">Contato</h3>
-                        <h1 className="font-display text-3xl sm:text-4xl">Vamos Conversar</h1>
-                        <p className="text-muted">
-                            Aberto a oportunidades de trabalho, contribuições ou apenas papos.
-                        </p>
-                    </div>
-
-                    <form
-                        onSubmit={handleSubmit(onSubmit)}
-                        className="flex flex-col gap-4 py-4"
-                    >
-                        <div className="flex flex-col gap-1">
-                            <Input
-                                label="Nome"
-                                placeholder="Digite seu nome"
-                                {...register("name")}
-                            />
-                            {errors.name && (
-                                <p className="text-sm text-red-500">{errors.name.message}</p>
-                            )}
-                        </div>
-
-                        <div className="flex flex-col gap-1">
-                            <Input
-                                label="Email"
-                                placeholder="Digite seu email"
-                                type="email"
-                                {...register("email")}
-                            />
-                            {errors.email && (
-                                <p className="text-sm text-red-500">{errors.email.message}</p>
-                            )}
-                        </div>
-
-                        <div className="flex flex-col gap-1">
-                            <Textarea
-                                label="Mensagem"
-                                placeholder="Digite sua mensagem"
-                                {...register("message")}
-                            />
-                            {errors.message && (
-                                <p className="text-sm text-red-500">{errors.message.message}</p>
-                            )}
-                        </div>
-
-                        <BtnAccent type="submit">Enviar mensagem</BtnAccent>
-                    </form>
+        <div className="flex flex-col gap-8 lg:flex-row lg:gap-8">
+            <div className="flex-1">
+                <div className="flex flex-col gap-4">
+                    <h3 className="uppercase font-bold text-primary">Contato</h3>
+                    <h1 className="font-display text-3xl sm:text-4xl">
+                        Vamos Conversar
+                    </h1>
+                    <p className="text-muted">
+                        Aberto a oportunidades de trabalho, contribuições ou apenas
+                        papos.
+                    </p>
                 </div>
 
-                <div className="flex-1">
-                    <h2 className="uppercase font-bold text-primary">Redes Sociais</h2>
-                    <div className="flex gap-4 py-4">
-                        <Link
-                            className="text-3xl transition-all duration-200 hover:text-primary"
-                            href="https://wa.me/5524998535387"
-                            target="_blank"
-                        >
-                            <FaWhatsapp />
-                        </Link>
-                        <Link
-                            className="text-3xl transition-all duration-200 hover:text-primary"
-                            href="https://www.linkedin.com/in/vitor-luiz-7b410b3b7/"
-                            target="_blank"
-                        >
-                            <FaLinkedinIn />
-                        </Link>
-                        <Link
-                            className="text-3xl transition-all duration-200 hover:text-primary"
-                            href="mailto:vitor7813@gmail.com"
-                            target="_blank"
-                        >
-                            <FaEnvelope />
-                        </Link>
-                        <Link
-                            className="text-3xl transition-all duration-200 hover:text-primary"
-                            href="https://github.com/Biurifin023"
-                            target="_blank"
-                        >
-                            <FaGithub />
-                        </Link>
-                    </div>
+                <ContactForm />
+            </div>
+
+            <div className="flex-1">
+                <h2 className="uppercase font-bold text-primary">Redes Sociais</h2>
+                <div className="flex gap-4 py-4">
+                    <Link
+                        className="text-3xl transition-all duration-200 hover:text-primary"
+                        href="https://wa.me/5524998535387"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <FaWhatsapp />
+                    </Link>
+                    <Link
+                        className="text-3xl transition-all duration-200 hover:text-primary"
+                        href="https://www.linkedin.com/in/vitor-luiz-7b410b3b7/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <FaLinkedinIn />
+                    </Link>
+                    <Link
+                        className="text-3xl transition-all duration-200 hover:text-primary"
+                        href="mailto:vitor7813@gmail.com"
+                    >
+                        <FaEnvelope />
+                    </Link>
+                    <Link
+                        className="text-3xl transition-all duration-200 hover:text-primary"
+                        href="https://github.com/Biurifin023"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <FaGithub />
+                    </Link>
                 </div>
             </div>
-        </>
+        </div>
     )
 }

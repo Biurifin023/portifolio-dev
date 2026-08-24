@@ -1,3 +1,4 @@
+import { Metadata } from "next"
 import { Suspense } from "react"
 import Link from "next/link"
 import BtnAccent from "@/app/utils/Buttons/Btn-accent"
@@ -16,6 +17,29 @@ import {
     ProjectHeaderSkeleton,
     ProjectImageSkeleton,
 } from "./project-skeletons"
+
+export async function generateMetadata({
+    params,
+  }: {
+    params: Promise<{ slug: string }>
+  }): Promise<Metadata> {
+    const { slug } = await params
+    const project = await getProjectBySlug(slug)
+  
+    if (!project) {
+      return { title: "Projeto não encontrado" }
+    }
+  
+    return {
+      title: project.title,
+      description: project.summary || project.description,
+      openGraph: {
+        title: project.title,
+        description: project.summary,
+        images: project.imageUrl ? [{ url: project.imageUrl }] : undefined,
+      },
+    }
+  }
 
 type ProjectPageProps = {
     params: Promise<{ slug: string }>

@@ -1,6 +1,13 @@
 import { Suspense } from "react"
 import { ProjectsList } from "./projects-dynamic"
 import { ProjectsGridSkeleton } from "./projects-skeletons"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+    title: "Projetos",
+    description: "Lista de projetos em destaque de Vitor Luiz - Desenvolvedor Full Stack",
+}
+
 
 export default function PageProjects() {
     return (

@@ -15,14 +15,30 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Vitor Luiz.dev",
-  description: "Portfólio.dev de Vitor Luiz",
+  metadataBase: new URL("https://vitorluiz.dev/"),
+  title: "Vitor Luiz | Desenvolvedor Full Stack",
+  description: "Portfólio de Vitor Luiz - desenvolvedor Full Stack",
+
+  openGraph: {
+    title: "Vitor Luiz | Desenvolvedor Full Stack",
+    description: "Portifolio com projetos, stack e contato",
+    url: "/",
+    siteName: "Vitor Luiz.dev",
+    locale: "pt-BR",
+    images: {url: "@/public/OG-img.png"}
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Vitor Luiz | Desenvolvedor Full Stack",
+    description: "Portfólio de Vitor Luiz",
+  },
+  robots: {index: true, follow: true},
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
-      lang="pt-Br"
+      lang="pt-BR"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full">
